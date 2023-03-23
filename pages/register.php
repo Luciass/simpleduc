@@ -5,7 +5,7 @@
     require_once '../class/class_mail.php';
     require('../config/dbconnexion.php');
 
-    use PHPMailer\PHPMailer\PHPMailer; 
+    //use PHPMailer\PHPMailer\PHPMailer; 
 
     if (isset($_POST['register_user'])) {
         if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['mail']) && isset($_POST['pass']) && isset($_POST['confirm_pass']) && isset($_POST['phone']) && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['mail']) && !empty($_POST['pass']) && !empty($_POST['confirm_pass']) && !empty($_POST['phone'])) {
@@ -20,8 +20,8 @@
                         $phone = htmlspecialchars($_POST['phone']);
                         $password = htmlspecialchars($_POST['confirm_pass']);
                         $code = uniqid(rand());
-                        $email = new Mail();
-                        $requser = $db->prepare("INSERT INTO users (nom, prenom, mail, tel, mdp, codeVA, valide, id_role) VALUE (:lastname, :firstname, :mail, :tel, :mdp, :codeVA, 0, 2)");
+                        //$email = new Mail();
+                        $requser = $db->prepare("INSERT INTO users (nom, prenom, mail, tel, mdp, codeVA, valide, id_role) VALUE (:lastname, :firstname, :mail, :tel, :mdp, :codeVA, 1, 2)");
                         $reqexecute = $requser->execute([
                             "lastname" => $lastname,
                             "firstname" => $firstname,
@@ -68,7 +68,7 @@
                                 </style>
                             </body>
                         </html>";
-                        $email->envoyerMailer($mail, 'Confirmation', $message, ""); ?>
+                        //$email->envoyerMailer($mail, 'Confirmation', $message, ""); ?>
 
                         <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>

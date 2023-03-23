@@ -4,19 +4,19 @@
     require_once('./lib/vendor/autoload.php');
     require_once('./class/class_mail.php');
 
-    use PHPMailer\PHPMailer\PHPMailer;
+    //use PHPMailer\PHPMailer\PHPMailer;
 
     if (isset($_POST['send'])) {
         $objet = htmlspecialchars($_POST['objet']);
         $nom = htmlspecialchars($_POST['nom']);
         $content = htmlspecialchars($_POST['message']);
         $mail = htmlspecialchars($_POST['email']);
-        $email = new Mail();
-        $email->envoyerMailer('thomas.delos@epsi.fr', $objet.' '.$nom, $content.'</br>'.$mail, "");
+        //$email = new Mail();
+        //$email->envoyerMailer('thomas.delos@epsi.fr', $objet.' '.$nom, $content.'</br>'.$mail, "");
     }
 
-    $email = new Mail();
-        $email->envoyerMailer('noha.flahaut@epsi.fr', 'cctwoi', 'cctwoi', '');
+    //$email = new Mail();
+    //$email->envoyerMailer('noha.flahaut@epsi.fr', 'cctwoi', 'cctwoi', '');
 ?>
 
 

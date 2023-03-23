@@ -4,7 +4,7 @@
     require_once '../lib/vendor/autoload.php';
     require_once '../class/class_mail.php';
 
-    use PHPMailer\PHPMailer\PHPMailer;
+    //use PHPMailer\PHPMailer\PHPMailer;
 
     $real = true;
     $mode = "";
@@ -23,7 +23,7 @@
         if ($theUser) {
             if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
                 $code = uniqid(rand());
-                $email = new Mail();
+                //$email = new Mail();
                 $reqUser = $db->prepare("UPDATE users SET codeVA = :code WHERE mail = :mail");
                 $reqUser->execute([
                   "mail" => $mail,
@@ -67,7 +67,7 @@
                         </style>
                     </body>
                 </html>";
-                $email->envoyerMailer($mail, 'reinitalisation mot de passe', $message, ""); ?>
+                //$email->envoyerMailer($mail, 'reinitalisation mot de passe', $message, ""); ?>
                 <?php header('location: ../index.php');
             } else {
                 $real = false;

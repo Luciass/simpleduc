@@ -65,30 +65,32 @@
                     <th scope="col">Metier</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr> <?php
+            <tbody> <?php
                     $reqUsers = $db->prepare("SELECT * FROM users");
                     $reqUsers->execute();
                     $users = $reqUsers->fetchall();
                     foreach($users as $user) { ?>
-                    <td><?= $user['id_user'] ?></td>
-                    <td><?= $user['nom'] ?></td>
-                    <td><?= $user['prenom'] ?></td>
-                    <?php
-                    $reqmetierE = $db->prepare("SELECT id_metier FROM exercer WHERE id_user = :idu");
-                    $reqmetierE->execute([
-                        "idu" => $user['id_user']
-                    ]);
-                    $metiers = $reqmetierE->fetch();
-                    $reqmetier = $db->prepare("SELECT * FROM metier WHERE id_metier = :idm");
-                    $reqmetier->execute([
-                        "idm" => $metiers['id_metier']
-                    ]);
-                    $metier = $reqmetier->fetch() ?>
-                    <td><?= $metier['nom_metier'] ?></td>
-                    <td><input type="checkbox" name="<?= $user['id_user'] ?>"></td>
+                        <tr>
+                            <td><?= $user['id_user'] ?></td>
+                            <td><?= $user['nom'] ?></td>
+                            <td><?= $user['prenom'] ?></td>
+                            <?php
+                            $reqmetierE = $db->prepare("SELECT id_metier FROM exercer WHERE id_user = :idu");
+                            $reqmetierE->execute([
+                                "idu" => $user['id_user']
+                            ]);
+                            $metiers = $reqmetierE->fetch();
+                            if ($metiers != false) {
+                                $reqmetier = $db->prepare("SELECT * FROM metier WHERE id_metier = :idm");
+                                $reqmetier->execute([
+                                    "idm" => $metiers['id_metier']
+                                ]);
+                                    $metier = $reqmetier->fetch(); 
+                            } ?>
+                            <td><?= $metier['nom_metier'] ?></td>
+                            <td><input type="checkbox" name="<?= $user['id_user'] ?>"></td>
+                        </tr>
                     <?php } ?>
-                </tr>
             </tbody>
         </table>
         <button type="submit" class="btn btn-secondary mb-5" name="add">Enregistrer</button>
