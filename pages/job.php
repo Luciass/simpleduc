@@ -2,7 +2,17 @@
 include('../config/dbconnexion.php');
 include('../inc/layout.php');
 
-
+if (isset($_POST['submit'])) {
+  foreach ($_POST['cat'] as $idcat){
+    if (isset($idcat)) {
+      $req = $db->prepare("INSERT INTO exercer(id_user, id_metier) VALUE (:id_user, :id_metier)");
+      $req->execute([
+        "id_user" => $id_user,
+        "id_metier" => $id_metier
+      ]);
+    }
+  }
+}
 
 ?>
 <!doctype html>
@@ -24,27 +34,16 @@ include('../inc/layout.php');
     <?php
       $req=$db->prepare("SELECT nom_metier, id_metier FROM metier");
       $req->execute();
-      $metiers=$req->fetchall();
+      $metiers = $req->fetchall();
       
       foreach($metiers as $metier){
         ?>
         <div>
-        <input type="radio" value="<?=$metier['id_metier']?>"><?=$metier['nom_metier']?>
-        <br/>
+          <div>
+            <input type="checkbox" value="<?=$metier['id_metier']?>" name="cat"><span>  <?=$metier['nom_metier']?></span>
+          </div>
       <?php }?>
 
-      <?php
-        foreach ($_POST['cat'] as $idcat){
-          $req = $db->prepare("INSERT INTO exercer(id_user, id_metier) VALUE (:id_user, :id_metier)");
-          $req->execute([
-            "id_user" => $id_user,
-            "id_metier" => $id_metier
-          ]);
-        
-        
-        }
-
-      ?>
 
       <button type="submit"> Envoyer </button>
       
