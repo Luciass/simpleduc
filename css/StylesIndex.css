@@ -1,0 +1,94 @@
+.p_right{
+  position: absolute;
+  top :40%;
+  bottom: 50%;
+  left: 20%;
+  right: 20%;
+  font-size : 1em;
+  color : white;
+}
+.h1_right{
+  position: absolute;
+  top :15%;
+  bottom: 50%;
+  left: 20%;
+  right: 20%;
+  font-size : 3.125em;
+  color : white;
+}
+.h2_right{
+  position: absolute;
+  top :30%;
+  bottom: 50%;
+  left: 20%;
+  right: 20%;
+  font-size : 1.875em;
+  color : white;
+}
+.gif{
+  position: relative;
+  width: 100%;
+  height: 73%;
+
+}
+.background{
+
+  background-color: brown;
+}
+
+.h2_service{
+  margin-top: 1%;
+  margin-bottom: 2%;
+  font-size: 1.5625em;
+  color: brown;
+  
+}
+
+.p_service{
+  position: absolute;
+  top: 90%;
+  left: 20%;
+  right: 20%;
+  font-size : 1.5em;
+  color : brown;
+
+}
+.Contact{
+ position: relative;
+  top: 110%;
+  left: 20%;
+  right: 20%;
+
+}
+.p_contact{
+  font-size: 10px;
+  color: brown;
+  left: 50%;
+  right: 50%;
+}
+.Contact_Box{
+  position: absolute;
+   top: 110%;
+   left: 20%;
+   right: 20%;
+   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+ 
+ }
+ form div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  min-height: 83px;
+  margin-top: 25px;
+  }
+
+ form div > label {
+  margin-bottom: 7px;
+  font-weight: 600;
+  color: brown;
+  }
+
+form div > textarea {
+    height: 195px;
+    padding: 15px 0px 0px 10px;
+    }
