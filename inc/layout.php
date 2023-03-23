@@ -1,5 +1,6 @@
 <?php 
   session_start();
+  require_once('/var/www/html/simpleduc/config/dbconnexion.php');
   if ($_SESSION) {
     $id_user = $_SESSION['user']['idu'];
     $reqUser = $db->prepare("SELECT id_role FROM users WHERE id_user = :id_user");
@@ -25,14 +26,14 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/projet-simpleduc/index.php">Home </a>
+        <a class="nav-link" href="/simpleduc/index.php">Home </a>
       </li>
       <?php if ($_SESSION == NULL) { ?>
       <li class="nav-item">
-        <a class="nav-link" href="/projet-simpleduc/pages/register.php">Register</a>
+        <a class="nav-link" href="/simpleduc/pages/register.php">Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/projet-simpleduc/pages/connexion.php">Login</a>
+        <a class="nav-link" href="/simpleduc/pages/connexion.php">Login</a>
       </li>
       <?php } ?>
       <?php if ($_SESSION != NULL) { 
@@ -41,26 +42,26 @@
           <a class="nav-link" href="#">Statistique</a>
         </li>
         <li>
-        <a class="nav-link" href="/projet-simpleduc/pages/entreprise.php">entreprise</a>
+        <a class="nav-link" href="/simpleduc/pages/entreprise.php">entreprise</a>
         </li>
         <li>
-        <a class="nav-link" href="/projet-simpleduc/pages/Contrat.php">Contrat</a>
+        <a class="nav-link" href="/simpleduc/pages/Contrat.php">Contrat</a>
         </li>
         <?php } ?>
         <li class="nav-item">
-          <a class="nav-link" href="/projet-simpleduc/pages/job.php">Job</a>
+          <a class="nav-link" href="/simpleduc/pages/job.php">Job</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/projet-simpleduc/pages/profil.php">profil</a>
+          <a class="nav-link" href="/simpleduc/pages/profil.php">profil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/projet-simpleduc/pages/destroy.php">destroy</a>
+          <a class="nav-link" href="/simpleduc/pages/destroy.php">destroy</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/projet-simpleduc/pages/entreprise.php">entreprise</a>
+          <a class="nav-link" href="/simpleduc/pages/entreprise.php">entreprise</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/projet-simpleduc/pages/equipe.php">equipe</a>
+          <a class="nav-link" href="/simpleduc/pages/equipe.php">equipe</a>
         </li>
       <?php } ?>
     </ul>

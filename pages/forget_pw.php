@@ -1,6 +1,6 @@
 <?php
     require('../inc/layout.php');
-    require('../config/dbconnexion.php');
+;
     require_once '../lib/vendor/autoload.php';
     require_once '../class/class_mail.php';
 
@@ -39,7 +39,7 @@
                     <body>
                         <h1>Reinitialisation de votre mot de passe</h1>
                         <p>Une demande de reinitialisation de votre mot de passe a etait faite si vous n'y etes pas a l'origine, merci d'ignorer ce mail. Si vous etes a l'origine de ce mail veuillez cliquer sur le lien ci-dessous.</p>
-                        <H3 style=\"text-align: center;\"><a href=\"https://$url/projet-simpleduc/pages/forget_pw.php?verify=$code\">cliquer pour reinitialiser votre mot de passe</a></H3>
+                        <H3 style=\"text-align: center;\"><a href=\"https://$url/simpleduc/pages/forget_pw.php?verify=$code\">cliquer pour reinitialiser votre mot de passe</a></H3>
                         <style>
                             h1 {
                                 text-align: center;

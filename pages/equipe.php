@@ -1,5 +1,5 @@
 <?php
-    include("../config/dbconnexion.php");
+ 
     include("../inc/layout.php");
 
     $idu = $_SESSION['user']['idu'];

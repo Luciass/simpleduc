@@ -1,5 +1,5 @@
 <?php
-    require('../config/dbconnexion.php');
+
     require '../inc/layout.php';
 
     require_once '../lib/vendor/autoload.php';

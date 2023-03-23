@@ -2,7 +2,7 @@
     require '../inc/layout.php';
 
     require_once '../lib/vendor/autoload.php';
-    require('../config/dbconnexion.php');
+
 
     $id_contrat = $_GET['Edit'];
     $reqcontrat = $db-> prepare("SELECT * From contrat where id_contrat = :id_contrat");

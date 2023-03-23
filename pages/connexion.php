@@ -3,7 +3,7 @@
     
 #un commentaire
     
-    require('../config/dbconnexion.php');
+
 
     
 

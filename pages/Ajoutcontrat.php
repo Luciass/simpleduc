@@ -2,7 +2,6 @@
     require '../inc/layout.php';
 
     require_once '../lib/vendor/autoload.php';
-    require('../config/dbconnexion.php');
 
 
    

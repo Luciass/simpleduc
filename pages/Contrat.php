@@ -1,13 +1,13 @@
 <?php
 
-    require('../config/dbconnexion.php');
+
     require '../inc/layout.php';
     require_once '../lib/vendor/autoload.php';
 
 
     if (isset($_GET['Delete'])) { ?>
       <div class="alert alert-danger" role="alert">
-          <form method="post" action= "/projet-simpleduc/pages/Contrat.php">
+          <form method="post" action= "/simpleduc/pages/Contrat.php">
               <h4 class="alert-heading">Suppresion</h4>
               <p>Vous etes sur le point de supprimer ce contrat, cette operation est definitive. Confirmer vous la supprimer?</p>
               <hr>
@@ -42,8 +42,8 @@
   <div class = "col-md-6 mb-3">
   <div class="card text-dark bg-light mb-3 pr-3 " style="max-width: 40rem;">
     <div style="text-align: center" class="card-header"><?= $Contrat['nom_entreprise']?>
-    <a data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" href="/projet-simpleduc/pages/ModifyContrat.php?Edit=<?= $Contrat['id_contrat'] ?>"><i tittle ="edit" style = "padding-left: 100px" class="fas fa-edit"></i></a>
-    <a data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" href="/projet-simpleduc/pages/Contrat.php?Delete=<?= $Contrat['id_contrat']?>"><i style = "padding-left: 20px" class="fas fa-trash-alt"></i></a>
+    <a data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" href="/simpleduc/pages/ModifyContrat.php?Edit=<?= $Contrat['id_contrat'] ?>"><i tittle ="edit" style = "padding-left: 100px" class="fas fa-edit"></i></a>
+    <a data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" href="/simpleduc/pages/Contrat.php?Delete=<?= $Contrat['id_contrat']?>"><i style = "padding-left: 20px" class="fas fa-trash-alt"></i></a>
   </div>
     <div class="card-body">
       <p style="text-align: center; font-weight: bold " class="card-title"><?= date('d/m/Y', strtotime($Contrat['date_debut_contrat']))?> - <?= date('d/m/Y', strtotime($Contrat['date_fin_contrat']))?> </p>

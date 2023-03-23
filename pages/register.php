@@ -3,7 +3,7 @@
 
     require_once '../lib/vendor/autoload.php';
     require_once '../class/class_mail.php';
-    require('../config/dbconnexion.php');
+
 
     //use PHPMailer\PHPMailer\PHPMailer; 
 
@@ -40,7 +40,7 @@
                             <body>
                                 <h1>Confirmation de votre mail</h1>
                                 <p>Nous sommes heureux de vous compter parmi nos nouveaux membres. Votre incription est bientot terminer il ne vous reste plus qu'a confirmer votre mail.</p>
-                                <H3 style=\"text-align: center;\"><a href=\"https://$url/projet-simpleduc/pages/confirm.php?verify=$code\">cliquer pour confirmer</a></H3>
+                                <H3 style=\"text-align: center;\"><a href=\"https://$url/simpleduc/pages/confirm.php?verify=$code\">cliquer pour confirmer</a></H3>
                                 <style>
                                     h1 {
                                         text-align: center;

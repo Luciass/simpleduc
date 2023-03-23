@@ -1,5 +1,5 @@
 <?php
-    require('./config/dbconnexion.php');
+ 
     include('./inc/layout.php');
     require_once('./lib/vendor/autoload.php');
     require_once('./class/class_mail.php');

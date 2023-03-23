@@ -1,5 +1,5 @@
 <?php
-    require('../config/dbconnexion.php');
+
     include('../inc/layout.php');
     
 
