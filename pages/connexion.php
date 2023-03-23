@@ -70,26 +70,47 @@
 
 <title>Simpleduc | Connexion</title>
 
-<div class="title_website">
-    <div class="container">
-        <h1>Se Connecter</h1>
-        <p>Connectez vous à votre compte</p>
-        <hr>
-    </div>
-</div>
-<div class="container">
-    <form method="POST">
-        <div class="mb-3">
-            <label for="mail" class="form-label">Adresse mail</label>
-            <input type="email" class="form-control" id="mail" name="mail">
-        </div>
-      
-        <div class="mb-3">
-            <label for="pass" class="form-label">Mot de passe</label>
-            <input type="password" class="form-control" id="pass" name="pass">
-        </div>
+
+
+
+
+<section>
+  <div class="login-box">
+
+
+        <form method="POST">
+        <h1>Login</h1>
+            <div class="input-box">
+
+              <span class="icon">
+                <ion-icon name="mail"></ion-icon>
+              </span>
         
-        <button type="submit" class="btn btn-primary mb-5" name="login">Se Connecter</button>
-        <button type="submit" class="btn btn-link mb-5" name="forget_pass">Mot de passe oublié</button>
-    </form>
-</div>
+                <input type="email" class="" id="mail" name="mail" placeholder="Email" required>
+
+
+            </div>
+          
+            <div class="input-box">
+              <span class="icon">
+                <ion-icon name="lock-closed"></ion-icon>
+              </span>
+
+        
+                <input type="password" class="" id="pass" name="pass" placeholder="Password" required>
+
+            </div>
+
+            <div class="forgot"><a type="submit" class="" name="forget_pass">Mot de passe oublié</a></div>
+            <button type="submit" class="" name="login">Se Connecter</button>
+
+
+            
+        </form>
+  </div>
+
+</section>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
