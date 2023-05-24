@@ -90,7 +90,7 @@
         </div>
         <div class="mb-3">
             <label for="cahier_charge" class="form-label">Cahier des chages </label>
-            <textarea class="form-control" id="cahier_charge" name="cahier_charge" cols="30" rows="10""><?= $contrat['cahier_charge']?></textarea >
+            <textarea class="form-control" id="cahier_charge" name="cahier_charge" cols="30" rows="10"><?= $contrat['cahier_charge']?></textarea >
         </div>
         <button type="submit" class="btn btn-primary mb-5" name="Modif_contrat"><a></>Modifier</button>
     </form>

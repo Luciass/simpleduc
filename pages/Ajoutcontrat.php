@@ -33,7 +33,23 @@
        
      }
 ?>
+<style>.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin-top: 20px;
+}
 
+.progress {
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+</style>
 <title>SimplEduc | Enregistrement d'un Contrat</title>
 
 <div class="title_website">
@@ -41,8 +57,11 @@
         <h1>Ajouter un Contrat</h1>
     </div>
 </div>
+<div class="progress-bar">
+  <div class="progress"></div>
+</div>
 <div class="container">
-    <form method="POST">
+    <form method="POST" id="task-form">
         <div class="mb-3">
             <label for="date_debut_contrat" class="form-label">Date de debut du contrat</label>
             <input type="date" class="form-control" id="date_debut_contrat" name="date_debut_contrat">
@@ -60,7 +79,8 @@
             <input type="text" class="form-control" id="cout_global" name="cout_global">
         </div>
         <div class="mb-3">
-            <select name = "id_entreprise" id="id_entreprise" class="form-control" ><option selected>Nom entreprise</option>
+            <select name = "id_entreprise" id="id_entreprise" class="form-control" >
+            <option selected>Nom entreprise</option>
             <?php
             $req =$db->prepare("SELECT * from entreprise");
             $req->execute();
@@ -80,3 +100,5 @@
         <button type="submit" class="btn btn-primary mb-5" name="add_contrat">ajouter</button>
     </form>
 </div>
+
+<script src="./main.js"></script>
